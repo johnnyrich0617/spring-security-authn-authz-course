@@ -20,8 +20,9 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+    		</dependency>
 	</dependencies>	
 	<modules>
 		<module>module_2</module>
