@@ -1,17 +1,17 @@
 --DROP TABLE USER;
 --DROP TABLE TRANSACTIONS;
 --CREATE TABLE IF NOT EXISTS USER (ID INT PRIMARY KEY, USERNAME VARCHAR(30), EMAIL VARCHAR(30),PASSWORD VARCHAR(30) );
-drop table users;
-drop table authorities ;
-drop table TRANSACTIONS;
-create table users(
+--DROP TABLE IF EXISTS users;
+--DROP TABLE IF EXISTS authorities ;
+--DROP TABLE IF EXISTS TRANSACTIONS;
+CREATE TABLE IF NOT EXISTS users(
 	username varchar_ignorecase(50) not null primary key,
 	password varchar_ignorecase(50) not null,
 	email varchar(100) not null,
 	enabled boolean not null
 );
 
-create table authorities (
+CREATE TABLE IF NOT EXISTS authorities (
 	username varchar_ignorecase(50) not null,
 	authority varchar_ignorecase(50) not null,
 	constraint fk_authorities_users foreign key(username) references users(username)

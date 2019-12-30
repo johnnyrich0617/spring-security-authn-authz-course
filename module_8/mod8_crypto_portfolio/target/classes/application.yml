@@ -6,30 +6,30 @@ server:
     key-store-type: PKCS12
     key-alias: tomcat
 disableEmailVerification: true
-spring:
-  mail:
-    host: 
-    port: 
-    username: 
-    password: 
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-    protocol: smtp
-    test-connection: false
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 
-            client-secret: 
-            facebook:
-            client-id: 
-            client-secret: 
+#spring:
+  #mail:
+   # host: 
+    #port: 
+    #username: 
+    #password: 
+    #properties:
+     # mail:
+      #  smtp:
+       #   auth: true
+         # starttls:
+         #   enable: true
+   # protocol: smtp
+  #  test-connection: false
+ # security:
+   # oauth2:
+    #  client:
+      #  registration:
+        #  google:
+        #    client-id: 
+        #    client-secret: 
+         # facebook:
+          #  client-id: 
+         #   client-secret: 
   
 logging:
   level:
