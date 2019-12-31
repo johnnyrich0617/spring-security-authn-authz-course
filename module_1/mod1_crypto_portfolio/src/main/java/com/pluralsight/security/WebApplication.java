@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.pluralsight.security.entity.CryptoCurrency;
 import com.pluralsight.security.entity.Portfolio;

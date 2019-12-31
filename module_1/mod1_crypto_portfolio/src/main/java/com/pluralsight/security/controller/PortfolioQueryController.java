@@ -14,6 +14,9 @@ import com.pluralsight.security.model.DeleteTransactionsDto;
 import com.pluralsight.security.model.ListTransactionsDto;
 import com.pluralsight.security.model.TransactionDetailsDto;
 import com.pluralsight.security.service.PortfolioQueryService;
+import com.pluralsight.security.service.SupportQueryService;
+
+import java.security.Principal;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,6 +25,7 @@ import lombok.RequiredArgsConstructor;
 public class PortfolioQueryController {
 
 	private final PortfolioQueryService portfolioService;
+	private final SupportQueryService supportQueryService;
 
 	@GetMapping("/")
 	public String index() {
@@ -29,7 +33,10 @@ public class PortfolioQueryController {
 	}
 	
 	@GetMapping("/portfolio")
-	public ModelAndView positions() {
+	public ModelAndView positions(Principal user) {	
+		if(user.getName().equalsIgnoreCase("admin"))
+			return new ModelAndView("support","queries",supportQueryService.getSupportQueriesForAllUsers());
+		
 		ModelAndView model = new ModelAndView();
 		model.addObject("positionsResponse", portfolioService.getPortfolioPositions());
 		model.addObject("transaction", new AddTransactionToPortfolioDto());

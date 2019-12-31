@@ -17,5 +17,9 @@
   <modules>
   	<module>mod2_crypto_portfolio_basic</module>
   	<module>mod2_crypto_portfolio_digest</module>
+  	<!--
+  	<module>1_auth-web_basic</module>
+  	<module>2_auth-web-digest</module>
+  	-->
   </modules>
 </project>
